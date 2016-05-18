@@ -5,12 +5,15 @@ namespace App\Core\Mvc;
 class View
 {
 	protected $data = [];
+	
 	public function __set($k,$v) {
 		$this->data[$k] = $v;
 	}
+	
 	public function __get($v) {
 		return $this->data[$v];
 	}
+	
 	public function render($template) {
 		ob_start();
 		foreach ($this->data as $key=>$values) {
@@ -21,6 +24,7 @@ class View
 		ob_end_clean();
 		return $content;
 	}
+	
 	public function display($template) {
 		echo $this->render($template);
 	}

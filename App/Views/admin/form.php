@@ -14,7 +14,7 @@
 
                 <button type="submit" style="background-color: green">Сохранить</button>
                 <button type="reset" style="background-color: aliceblue"><a
-                        href="/admin/one/">Отменить</a></button>
+                        href="/admin/all/">Отменить</a></button>
 
             </form>
             <?php if (!empty($id)): ?>

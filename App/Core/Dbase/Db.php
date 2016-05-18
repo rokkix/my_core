@@ -13,9 +13,10 @@ class Db
 		try {
 			$this->dbh = new \PDO('mysql:dbname=project;host=localhost','root','');
 		} catch (\PDOException $e) {
-			die('Îøèáêà°');
+			die('Error connect MySQL');
 		}
 	}
+	
 	public function query($sql, $class, $values = []){
 		try {
 			$sth = $this->dbh->prepare($sql);
@@ -24,9 +25,10 @@ class Db
 				return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
 			}
 		} catch (\PDOException $e) {
-			die('Îøèáêà');
+			die('Error query');
 		}
 	}
+	
 	public function execute($sql,$values = []){
 		$sth = $this->dbh->prepare($sql);
 		return $sth->execute($values);

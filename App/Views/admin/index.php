@@ -1,5 +1,6 @@
 <div class="container">
     <h1>Новости</h1>
+	
     <button class="btn btn-success btn-md" style="margin-bottom: 5px">
     <a href="/admin/create" style="text-decoration: none; color: white">    Написать свою новость</a>
     </button>
@@ -8,10 +9,10 @@
 
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    <a href="/admin/one/?id=<?php echo $article->id ?>">
-                        <h4>    <?php echo $article->title; ?></h4></a>
+                    
+                        <h4>    <?php echo $article->title; ?></h4>
                 </div>
-                <div class="panel-body"><?php echo $article->description; ?>
+                <div class="panel-body"><?php echo $article->text; ?>
                     <p><a href="/admin/one/?id=<?php echo $article->id ?>">Подробно >>></a></p>
                 </div>
                 <div class="panel-footer" style="font-size: small">
